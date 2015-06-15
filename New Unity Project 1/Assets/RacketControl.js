@@ -4,10 +4,11 @@ function Start () {
 
 }
 
-var Accel = 10000.0;
+var Accel = 5.0;
 function Update () {
-  rigidbody.AddForce(
-    transform.right * Input.GetAxisRaw( "Horizontal" ) * Accel,
-    ForceMode.Impulse
-  );
+transform.position = new Vector3 (
+    transform.position.x + Input.GetAxisRaw("Horizontal")*0.25,
+    0,
+    transform.position.z + Input.GetAxisRaw("Vertical")*0.25
+);
 }
